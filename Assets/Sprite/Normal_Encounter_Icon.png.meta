@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: c783be8d43ad6b6488eafe3784c35267
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4068753519371431306
+    second: Normal_Encounter_Icon_0
+  - first:
+      213: 6838877013880838959
+    second: Normal_Encounter_Icon_1
+  - first:
+      213: 7962581346210360066
+    second: Normal_Encounter_Icon_2
+  - first:
+      213: 7492128745550576355
+    second: Normal_Encounter_Icon_3
+  - first:
+      213: 4104107329669051078
+    second: Normal_Encounter_Icon_4
+  - first:
+      213: 2917594650185808840
+    second: Normal_Encounter_Icon_5
+  - first:
+      213: -5238089564226377741
+    second: Normal_Encounter_Icon_6
+  - first:
+      213: 6833685595622553478
+    second: Normal_Encounter_Icon_7
+  - first:
+      213: 195578716552062758
+    second: Normal_Encounter_Icon_8
+  - first:
+      213: -8813655252142585489
+    second: Normal_Encounter_Icon_9
+  - first:
+      213: 2243488967373410901
+    second: Normal_Encounter_Icon_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d21c8c4cd177830800000000000000
+      internalID: 4068753519371431306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 100
+        width: 126
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b93f2096298ee50800000000000000
+      internalID: 6838877013880838959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 150
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b250cfb85c08e60800000000000000
+      internalID: 7962581346210360066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 71
+        width: 55
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eaf80a266369f760800000000000000
+      internalID: 7492128745550576355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_4
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 71
+        width: 56
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c230013fd7b4f830800000000000000
+      internalID: 4104107329669051078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 84
+        width: 85
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbb7e250e06d7820800000000000000
+      internalID: 2917594650185808840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 59
+        width: 96
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f72b9e3b419e47b0800000000000000
+      internalID: -5238089564226377741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 47
+        width: 84
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68739c1c7d026de50800000000000000
+      internalID: 6833685595622553478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 34
+        width: 72
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62766b57ec5d6b200800000000000000
+      internalID: 195578716552062758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 22
+        width: 60
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f690943be3b9fa580800000000000000
+      internalID: -8813655252142585489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Encounter_Icon_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 72
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552dccd4459722f10800000000000000
+      internalID: 2243488967373410901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b643be42489b48c4d8d4bc2a418b51cb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Normal_Encounter_Icon_0: 4068753519371431306
+      Normal_Encounter_Icon_1: 6838877013880838959
+      Normal_Encounter_Icon_10: 2243488967373410901
+      Normal_Encounter_Icon_2: 7962581346210360066
+      Normal_Encounter_Icon_3: 7492128745550576355
+      Normal_Encounter_Icon_4: 4104107329669051078
+      Normal_Encounter_Icon_5: 2917594650185808840
+      Normal_Encounter_Icon_6: -5238089564226377741
+      Normal_Encounter_Icon_7: 6833685595622553478
+      Normal_Encounter_Icon_8: 195578716552062758
+      Normal_Encounter_Icon_9: -8813655252142585489
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
