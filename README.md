@@ -16,6 +16,8 @@
   </li>
 </ul>
 <hr>
+<br>
+<h2>1주차 작업</h2>
 <h3>Unity 코드</h3>
 &nbsp;임시로 로그를 참조할 게임은 미리 만들어둔 Unity 기반 로그라이크 게임으로 진행하였습니다. 다음은 리포트를 작성하기 위한 스크립트입니다. 
 <br><br>
@@ -167,4 +169,24 @@ public static class QAEventLogger
 <h3>n8n 자동화</h3>
 &nbsp;n8n은 Docker를 이용해 셀프 호스팅하였고, Webhook을 위하여 로컬환경이 아닌 cloudflare를 이용한 호스팅을 해주었습니다. 우선 테스트를 위하여 Webhook을 받고 아무 요청이나 한번이라도 보내진다면 저에게 메일을 보내도록 구현하였습니다.
 <img width="792" height="472" alt="image" src="https://github.com/user-attachments/assets/d82234d7-8d82-4777-9000-eeffdb600907" />
+<br><br>
+
+&nbsp;AI 에이전트에게 테스트용으로 준 프롬포트는 다음과 같습니다.
+
+```
+너는 QA테스트를 도와줄 AI 비서야.
+
+일단 지금은 테스트단계이고 Webhook을 통해 로그를 확인하고 조회가 된다면 나에게 보내줘.
+```
+<br>
+&nbsp;해당 프롬포트 입력 후 Unity 스크립트에서 적 조우 이벤트 발생 시 적의 종류와 현재 체력, 플레이어 사망/적 처치 여부를 보내도록 코드를 추가하였습니다
+
+```
+QAEventLogger.LogEvent("적 조우 이벤트", $"{index}번 적 조우");
+```
+
+&nbsp;이후 게임 플레이 중 적 이벤트 조우가 발생하였을 때 n8n의 로그에 정상적으로 AI 에이전트에게 전달이 되는 것과 메일이 전송되는 것을 확인할 수 있었습니다.
+<img width="1857" height="553" alt="image" src="https://github.com/user-attachments/assets/ec58256e-7c18-41f8-8bbd-07393648d053" />
+<img width="273" height="143" alt="image" src="https://github.com/user-attachments/assets/378a65f5-a2d5-4574-aeae-866356163031" />
+
 
