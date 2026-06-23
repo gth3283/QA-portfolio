@@ -1,4 +1,5 @@
-<h1>AI 버그 리포트 자동화 시스템</h1>
+<h1>AI 리포트 자동화 시스템</h1>
+&nbsp;해당 프로젝트는 QA의 프로세스를 자동화하고 Unity와 n8n을 Webhook으로 연결하여 실시간 정보수집 및 발생 시각 파악에 용이하도록 제작한 프로젝트입니다. 
 <h3>구성</h3>
 <ul>
   <li>
@@ -14,3 +15,156 @@
     Jira: 버그 리포트 표시
   </li>
 </ul>
+<hr>
+<h3>Unity 코드</h3>
+&nbsp;임시로 로그를 참조할 게임은 미리 만들어둔 Unity 기반 로그라이크 게임으로 진행하였습니다. 다음은 리포트를 작성하기 위한 스크립트입니다. 
+<br><br>
+
+&nbsp;먼저 기존 게임에서 받아올 정보들과 리포트의 타입, 추가 메세지를 생성하기 위해 클래스의 형태로 정의하여 주었습니다.
+```cs
+[System.Serializable]
+public class BugReport
+{
+    public string eventType;
+
+    public string message;
+
+    public string sceneName;
+
+    public int currentHp;
+
+    public int maxHp;
+
+    public int mapStep;
+
+    public string selectedRoute;
+
+    public int blackStone;
+
+    public int whiteStone;
+
+    public bool isBoss;
+
+    public string timestamp;
+}
+```
+<br>
+
+&nbsp;다음으로 Webhook의 URL로 BugReport를 Json형태로 전달하는 스크립트를 작성하였습니다. 코루틴을 사용하면서 다른 씬을 이동하는 등의 상황에도 지속해서 동작하도록 MonoBehaviour로 생성하였습니다.
+```cs
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
+using System.Text;
+
+public class BugReporter : MonoBehaviour
+{
+    public static BugReporter Instance;
+
+    private const string WEBHOOK_URL = "<WEBHOOK_URL>";//해당 부분에 URL 기입
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void SendReport(
+        BugReport report)
+    {
+        StartCoroutine(
+            SendCoroutine(report)
+        );
+    }
+
+    private IEnumerator SendCoroutine(
+        BugReport report)
+    {
+        string json =
+            JsonUtility.ToJson(report);
+
+        UnityWebRequest request =
+            new UnityWebRequest(
+                WEBHOOK_URL,
+                "POST"
+            );
+
+        byte[] body =
+            Encoding.UTF8.GetBytes(json);
+
+        request.uploadHandler =
+            new UploadHandlerRaw(body);
+
+        request.downloadHandler =
+            new DownloadHandlerBuffer();
+
+        request.SetRequestHeader(
+            "Content-Type",
+            "application/json"
+        );
+
+        yield return request.SendWebRequest();
+
+        Debug.Log(
+            request.result
+        );
+    }
+}
+```
+<br>
+
+&nbsp;마지막으로 각 상황 발생시에 호출하여 로그에 정보를 기입하고 생성할 스크립트를 작성하였습니다. 이제 다른 스크립트에서 플레이어 사망, 적 처치, 스테이지 이동 등이 처리될때 해당 클래스를 호출하여 최종적으로 BugReporter를 통해 WebHook으로 전송할 것입니다.
+```cs
+using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public static class QAEventLogger
+{
+    public static void LogEvent(
+        string eventType,
+        string message = "")
+    {
+        BugReport report = new BugReport
+        {
+            eventType = eventType,
+            message = message,
+
+            sceneName =
+                SceneManager.GetActiveScene().name,
+
+            currentHp =
+                GameManager.PlayerCurrentHp,
+
+            maxHp =
+                GameManager.PlayerMaxHp,
+
+            mapStep =
+                GameManager.MapCurrentStep,
+
+            selectedRoute =
+                GameManager.SelectedRoute1
+                    ? "Route1"
+                    : "Route2",
+
+            blackStone =
+                GameManager.BlackStoneCount,
+
+            whiteStone =
+                GameManager.WhiteStoneCount,
+
+            isBoss =
+                GameManager.boss,
+
+            timestamp =
+                DateTime.Now.ToString()
+        };
+
+        BugReporter.Instance.SendReport(report);
+    }
+}
+```
+<hr>
+<h3>n8n 자동화</h3>
+&nbsp;n8n은 Docker를 이용해 셀프 호스팅하였고, Webhook을 위하여 로컬환경이 아닌 cloudflare를 이용한 호스팅을 해주었습니다. 우선 테스트를 위하여 Webhook을 받고 아무 요청이나 한번이라도 보내진다면 저에게 메일을 보내도록 구현하였습니다.
+<img width="792" height="472" alt="image" src="https://github.com/user-attachments/assets/d82234d7-8d82-4777-9000-eeffdb600907" />
+
