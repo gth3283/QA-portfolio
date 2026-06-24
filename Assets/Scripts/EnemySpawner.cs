@@ -13,11 +13,13 @@ public class EnemySpawner : MonoBehaviour
     {
         int index = Random.Range(0, normal.Count);
         EnemyManager.DataInput(normal[index]);
+        QAEventLogger.LogEvent("적 조우 이벤트", $"{index}번 적 조우");
     }
 
     public void SpawnBoss()
     {
         int index = Random.Range(0, boss.Count);
         EnemyManager.DataInput(boss[index]);
+        QAEventLogger.LogEvent($"{index}번 적 조우", "보스");
     }
 }

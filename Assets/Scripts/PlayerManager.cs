@@ -78,6 +78,7 @@ public class PlayerManager : MonoBehaviour
             spriteRenderer.color = new Color(1, 1, 1, 0.5f);
             spriteRenderer.flipY = true;
             StopAllCoroutines();
+            QAEventLogger.LogEvent("Player_Dead","플레이어 사망");
             Retry.SetActive(true);
         }
     }

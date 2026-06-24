@@ -57,6 +57,7 @@ public class EnemyManager : MonoBehaviour
         if (Hp == 0)
         {
             StartCoroutine(enemyAnimation.dead());
+            QAEventLogger.LogEvent("Enemy_Dead","Àû »ç¸Á");
         }
         else
         {
