@@ -57,7 +57,7 @@ public class EnemyManager : MonoBehaviour
         if (Hp == 0)
         {
             StartCoroutine(enemyAnimation.dead());
-            QAEventLogger.LogEvent("Enemy_Dead","적 사망");
+            QAEventLogger.LogEvent("Enemy_Dead","적 처치");
         }
         else
         {

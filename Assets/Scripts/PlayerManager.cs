@@ -96,6 +96,7 @@ public class PlayerManager : MonoBehaviour
     public void AddStone(GoType stone)
     {
         deck.Add(new GoStone(stone));
+        QAEventLogger.LogEvent("보상 선택", $"{stone} 추가");
 
         if (stone == GoType.Black)
         {
