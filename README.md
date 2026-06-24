@@ -179,7 +179,7 @@ public static class QAEventLogger
 일단 지금은 테스트단계이고 Webhook을 통해 로그를 확인하고 조회가 된다면 나에게 보내줘.
 ```
 <br>
-&nbsp;해당 프롬포트 입력 후 Unity 스크립트에서 적 조우 이벤트 발생 시 적의 종류와 현재 체력, 플레이어 사망/적 처치 여부를 보내도록 코드를 추가하였습니다
+&nbsp;해당 프롬포트 입력 후 Unity 스크립트에서 적 조우 이벤트 발생 시 적의 종류와 현재 체력 등을 전송하도록 코드를 추가하였습니다
 
 ```
 QAEventLogger.LogEvent("적 조우 이벤트", $"{index}번 적 조우");
@@ -188,5 +188,13 @@ QAEventLogger.LogEvent("적 조우 이벤트", $"{index}번 적 조우");
 &nbsp;이후 게임 플레이 중 적 이벤트 조우가 발생하였을 때 n8n의 로그에 정상적으로 AI 에이전트에게 전달이 되는 것과 메일이 전송되는 것을 확인할 수 있었습니다.
 <img width="1857" height="553" alt="image" src="https://github.com/user-attachments/assets/ec58256e-7c18-41f8-8bbd-07393648d053" />
 <img width="273" height="143" alt="image" src="https://github.com/user-attachments/assets/378a65f5-a2d5-4574-aeae-866356163031" />
+<br>
 
+&nbsp;이제 정상적으로 Webhook 전송 및 받아오기가 되는 것을 확인하였으니 Unity에서 상황에 따라 다른 메세지를 생성하도록 추가하였습니다. 
+
+```cs
+QAEventLogger.LogEvent("Enemy_Dead","적 처치"); //적 처치 로그
+QAEventLogger.LogEvent("Player_Dead","플레이어 사망"); //플레이어 사망 로그
+QAEventLogger.LogEvent("보상 선택", $"{stone} 추가"); //보상 선택 로그
+```
 
