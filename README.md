@@ -14,6 +14,9 @@
   <li>
     Jira: 버그 리포트 표시
   </li>
+  <li>
+    (임시) sql로 로그 DB 관리
+  </li>
 </ul>
 <hr>
 <br>
@@ -166,7 +169,7 @@ public static class QAEventLogger
 }
 ```
 <hr>
-<h3>n8n 자동화</h3>
+<h3>n8n 작동 확인</h3>
 &nbsp;n8n은 Docker를 이용해 셀프 호스팅하였고, Webhook을 위하여 로컬환경이 아닌 cloudflare를 이용한 호스팅을 해주었습니다. 우선 테스트를 위하여 Webhook을 받고 아무 요청이나 한번이라도 보내진다면 저에게 메일을 보내도록 구현하였습니다.
 <img width="792" height="472" alt="image" src="https://github.com/user-attachments/assets/d82234d7-8d82-4777-9000-eeffdb600907" />
 <br><br>
@@ -189,12 +192,19 @@ QAEventLogger.LogEvent("적 조우 이벤트", $"{index}번 적 조우");
 <img width="1857" height="553" alt="image" src="https://github.com/user-attachments/assets/ec58256e-7c18-41f8-8bbd-07393648d053" />
 <img width="273" height="143" alt="image" src="https://github.com/user-attachments/assets/378a65f5-a2d5-4574-aeae-866356163031" />
 <br>
+<hr>
+<h3>Jira 연결</h3>
 
-&nbsp;이제 정상적으로 Webhook 전송 및 받아오기가 되는 것을 확인하였으니 Unity에서 상황에 따라 다른 메세지를 생성하도록 추가하였습니다. 
+&nbsp;이제 정상적으로 Webhook 전송 및 받아오기가 되는 것을 확인하였으니 Unity에서 상황에 따라 다른 메세지를 생성하도록 추가하였습니다. 그리고 기존 메일 전송으로 테스트하던 노드를 Jira에 업무 항목을 추가하는 방식으로 수정하여 문제 발생시 담당자가 확인 가능하도록 변경하였습니다.
 
 ```cs
-QAEventLogger.LogEvent("Enemy_Dead","적 처치"); //적 처치 로그
-QAEventLogger.LogEvent("Player_Dead","플레이어 사망"); //플레이어 사망 로그
+QAEventLogger.LogEvent("Enemy_Dead", $"Kill {enemy.CurrentEnemyData.Name} ID:{enemy.CurrentEnemyData.Id}"); //적 처치 로그
+QAEventLogger.LogEvent("Player_Dead", $"Killed By {enemy.CurrentEnemyData.Name} ID:{enemy.CurrentEnemyData.Id}"); //플레이어 사망 로그
 QAEventLogger.LogEvent("보상 선택", $"{stone} 추가"); //보상 선택 로그
 ```
+<br>
+&nbsp;이제 Webhook을 테스트링크가 아닌 실시간으로 받아오도록 워크플로우를 Publish해준 뒤 게임을 실행하여 정상적으로 이슈 발생시 Jira에 추가되는지 확인한 결과 플레이어가 사망할 경우 n8n에서 정상적으로 플레이어 사망처리 로그가 확인되는 것을 볼 수 있고, Jira에도 업무가 생성되었습니다.
+<img width="757" height="424" alt="image" src="https://github.com/user-attachments/assets/e25204ae-b5a0-4b18-af35-055253b69fe6" />
+<img width="1554" height="308" alt="image" src="https://github.com/user-attachments/assets/7d6d9e52-b604-48e5-b00a-cff412f427bc" />
+<img width="1031" height="567" alt="image" src="https://github.com/user-attachments/assets/98718481-005f-479a-97ab-c0cad6efb1b0" />
 
