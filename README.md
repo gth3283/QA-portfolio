@@ -1,5 +1,10 @@
 <h1>AI 리포트 자동화 시스템</h1>
 &nbsp;해당 프로젝트는 QA의 프로세스를 자동화하고 Unity와 n8n을 Webhook으로 연결하여 실시간 정보수집 및 발생 시각 파악에 용이하도록 제작한 프로젝트입니다. 
+<br><br>
+https://youtu.be/uRYMSh113D8?si=jBOHGTMI0IzfgNN8
+<br>
+실행 영상
+<br><br>
 <h3>구성</h3>
 <ul>
   <li>
