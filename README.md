@@ -25,7 +25,7 @@ https://youtu.be/uRYMSh113D8?si=jBOHGTMI0IzfgNN8
 </ul>
 <hr>
 <br>
-<h2>1주차 작업</h2>
+<h2>구현 내용</h2>
 <h3>Unity 코드</h3>
 &nbsp;임시로 로그를 참조할 게임은 미리 만들어둔 Unity 기반 로그라이크 게임으로 진행하였습니다. 다음은 리포트를 작성하기 위한 스크립트입니다. 
 <br><br>
